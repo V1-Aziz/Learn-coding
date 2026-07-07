@@ -20,3 +20,4 @@
 - [Feedback - Step structure first, then review](feedback_step_then_review.md) — Give step instructions first; never review code mid-step even if user jumped ahead
 - [Feedback - Read code file first](feedback_read_code_first.md) — Always read the file from disk; never ask the user to paste their code
 - [Feedback - Read main.py before saving](feedback_read_before_save.md) — Always read main.py before saving the day's memory entry
+- [Feedback - Teach, don't write code](feedback_teaching_style.md) — Guide the user to write code themselves; don't Edit/Write into their files unless they explicitly ask (or reach Hint Level 4)
