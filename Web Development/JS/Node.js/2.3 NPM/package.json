@@ -1,0 +1,17 @@
+{
+  "name": "learning-npm",
+  "version": "1.0.0",
+  "description": "Something new to learn",
+  "license": "ISC",
+  "author": "Aziz",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "sillyname": "^0.1.0",
+    "something": "^0.0.1",
+    "superheros": "^1.0.0"
+  }
+}

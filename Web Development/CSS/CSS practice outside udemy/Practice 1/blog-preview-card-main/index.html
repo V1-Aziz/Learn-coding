@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Blog preview card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: "Figtree", sans-serif;
+      display: flex;
+      background-color: hsl(47, 88%, 63%);
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .publish-date{
+      font-weight: 500;
+    }
+
+    .card-title {
+      font-weight: 800;
+    }
+
+    .card-body {
+      align-content: center;
+      align-items: center;
+      background-color: white;
+      height: 570px;
+      width: 92%;
+      max-width: 400px;
+      border-radius: 5%;
+      box-shadow: 9px 9px 0px 0px black;
+    }
+
+    .card-content {
+      padding-left: 20px;
+    }
+
+
+    .card-img {
+      height: 215px;
+      justify-self: center;
+      border-radius: 5%;
+    }
+
+    .content {
+      width: 95%;
+      font-size: 20px;
+      font-weight: 500;
+      color: hsl(0, 0%, 42%);
+    }
+
+    .catagory {
+      font-weight: 800;
+      display: flex;
+      text-align: center;
+      justify-items: center;
+      align-items: center;
+      height: 100vh;
+      margin-top: 15px;
+      padding-left: 10px;
+      background-color: hsl(47, 88%, 63%);
+      height: 30px;
+      width: 75px;
+      border-radius: 10%;
+    }
+
+    .profile-placeholder {
+      display: flex;
+      grid-template-columns: 100px 100px;
+    }
+
+    .profile-pic {
+      height: 35px;
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+
+    .username {
+      font-size: 17px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-body">
+    <div class="card-content">
+      <img class="card-img" src="./assets/images/illustration-article.svg" alt="Code symbol">
+      <div class="catagory">
+        <p>Learning</p>
+      </div>
+      <p class="publish-date">Published 21 Dec 2023</p>
+      <h2 class="card-title">HTML & CSS foundations</h3>
+        <p class="content">These languages are the backbone of every website, defining structure, content and
+          presentation.</p>
+        <div class="profile-placeholder">
+          <img class="profile-pic" src="./assets/images/image-avatar.webp" alt="Greg Hooper Profile Pic">
+          <h3 class="username">Greg Hooper</h5>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>

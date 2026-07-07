@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background-color: #37353E;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #44444E;
+    margin: 0;
+    padding: 10px;
+}
+
+.nav-bar {
+    display: inline-block;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.nav-button {
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.active {
+    color: white;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.welcome-section{
+    padding: 200px;
+}
+
+.welcome-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color: white;
+    font-size: 30px;
+}
+
+.profession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1vh;
+    color: white;
+    font-size: 30px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    margin: 20px 0 20px 0;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 400px 300px 300px 300px;
+    grid-template-rows: 300px 300px;
+    margin-top: 40px;
+    grid-template-areas:
+        "box-1 box-2 box-2 box-3"
+        "box-1 box-4 box-5 box-5";
+    gap: 1rem;
+}
+
+.photo{
+    border-radius: 24px;
+    background-color: white;
+}
+
+.photo img{
+    border-radius: 24px;
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+/* Write your code here: */
+/* This is goruping*/
+h1 ,h2 {
+    color: blueviolet;
+}
+/* Here is the parent and child selector*/
+
+.box > p {
+    color: firebrick;
+}
+
+/*Here is the ancestor -> descendant selector*/
+
+.box li{
+    color: blue;
+}
+/* Here is an chaining selector*/
+li.done{
+    color: seagreen;
+}
+
+/*Combining chining selectors*/
+
+ul p.done{
+    font-size: 0.2em;
+}

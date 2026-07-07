@@ -1,0 +1,30 @@
+{
+  "name": "2.4-qr-code-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chardet": "^2.1.1",
+    "cli-width": "^4.1.0",
+    "fast-string-truncated-width": "^3.0.3",
+    "fast-string-width": "^3.0.2",
+    "fast-wrap-ansi": "^0.2.0",
+    "iconv-lite": "^0.7.2",
+    "inquirer": "^13.3.0",
+    "mute-stream": "^3.0.0",
+    "qr-image": "^3.2.0",
+    "run-async": "^4.0.6",
+    "rxjs": "^7.8.2",
+    "safer-buffer": "^2.1.2",
+    "signal-exit": "^4.1.0",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

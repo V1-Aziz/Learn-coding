@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Enables NFC tag reader session in the app. After adding this file
+	     you must also enable "Near Field Communication Tag Reading" in
+	     Xcode → Signing & Capabilities and select this entitlements file
+	     in Runner target → Build Settings → Code Signing Entitlements. -->
+	<key>com.apple.developer.nfc.readersession.formats</key>
+	<array>
+		<string>TAG</string>
+		<string>NDEF</string>
+	</array>
+</dict>
+</plist>

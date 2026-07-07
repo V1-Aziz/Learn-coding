@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>API Learning Map</title>
+  <style>
+    /* Force dark backgrounds to print in PDF */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f1117;
+      color: #e0e0e0;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 36px;
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      border-radius: 16px;
+      margin-bottom: 32px;
+      border: 1px solid #4338ca;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .header p { color: #a5b4fc; font-size: 0.95rem; }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* SECTION */
+    .section {
+      border-radius: 14px;
+      margin-bottom: 28px;
+      overflow: hidden;
+      border: 1px solid #2a2d3e;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+    }
+
+    .section-icon {
+      font-size: 1.8rem;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title { font-size: 1.2rem; font-weight: 700; color: white; }
+    .section-num { font-size: 0.72rem; opacity: 0.65; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: white; }
+
+    .section-body {
+      padding: 22px 24px;
+      background: #13151f;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #9ca3af;
+      margin-bottom: 18px;
+    }
+
+    /* TWO COLUMNS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .code-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: #6b7280;
+    }
+
+    /* CODE */
+    pre {
+      background: #0a0c14;
+      border: 1px solid #1f2233;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #c9d1d9;
+    }
+
+    /* CHECKLIST */
+    .checklist { margin-bottom: 16px; }
+    .check-item {
+      display: flex;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: #d1d5db;
+      padding: 6px 0;
+      border-bottom: 1px solid #1f2233;
+      align-items: flex-start;
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: white;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* AUTH GRID */
+    .auth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .auth-card {
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid;
+      background: #0f1117;
+    }
+
+    .auth-name { font-weight: 700; font-size: 0.88rem; margin-bottom: 4px; }
+    .auth-desc { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+
+    .auth-card pre {
+      font-size: 0.74rem;
+      padding: 8px 10px;
+      background: #0a0c14;
+    }
+
+    /* CRUD TABLE */
+    .crud-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .crud-table th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #9ca3af;
+      background: #0a0c14;
+    }
+
+    .crud-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #1f2233;
+      color: #d1d5db;
+    }
+
+    .crud-table tr:last-child td { border-bottom: none; }
+    .crud-table tr { background: #13151f; }
+
+    .method-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      background: #0a0c14;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #c9d1d9;
+    }
+
+    /* FLOW */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      background: #0a0c14;
+      border: 1px solid #1f2233;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .flow-box {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .flow-arrow { color: #4b5563; font-size: 1rem; }
+
+    /* TAGS */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* FINAL */
+    .final {
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 32px;
+      color: white;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+
+    .final h2 { font-size: 1.4rem; margin-bottom: 8px; }
+    .final p { color: #a5b4fc; font-size: 0.88rem; margin-bottom: 24px; }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .stack-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px 8px;
+    }
+
+    .stack-item .s-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .stack-item .s-name { font-weight: 700; font-size: 0.88rem; margin-bottom: 4px; color: white; }
+    .stack-item .s-desc { color: #6b7280; font-size: 0.75rem; }
+
+    /* ── SECTION COLORS ── */
+
+    /* 5.2 Blue */
+    .s52 .section-header { background: linear-gradient(135deg, #1e3a5f, #2563eb); }
+    .s52 .check-icon { background: #2563eb; }
+    .s52 pre { border-color: #1e3a5f; }
+    .s52 .tag { background: #1e3a8a; color: #93c5fd; }
+    .s52 .badge { background: #2563eb; }
+
+    /* 5.3 Purple */
+    .s53 .section-header { background: linear-gradient(135deg, #3b0764, #7c3aed); }
+    .s53 .check-icon { background: #7c3aed; }
+    .s53 pre { border-color: #3b0764; }
+    .s53 .tag { background: #3b0764; color: #c4b5fd; }
+    .s53 .flow-box { background: #6d28d9; }
+    .s53 .badge { background: #7c3aed; }
+
+    /* 5.4 Green */
+    .s54 .section-header { background: linear-gradient(135deg, #064e3b, #059669); }
+    .s54 .check-icon { background: #059669; }
+    .s54 pre { border-color: #064e3b; }
+    .s54 .tag { background: #064e3b; color: #6ee7b7; }
+    .s54 .badge { background: #059669; }
+
+    /* Auth cards */
+    .auth-noauth { border-color: #1d4ed8; }
+    .auth-noauth .auth-name { color: #60a5fa; }
+    .auth-basic  { border-color: #7c3aed; }
+    .auth-basic .auth-name  { color: #c4b5fd; }
+    .auth-apikey { border-color: #059669; }
+    .auth-apikey .auth-name { color: #6ee7b7; }
+    .auth-bearer { border-color: #d97706; }
+    .auth-bearer .auth-name { color: #fbbf24; }
+
+    /* 5.5 Orange */
+    .s55 .section-header { background: linear-gradient(135deg, #78350f, #d97706); }
+    .s55 .check-icon { background: #d97706; }
+    .s55 pre { border-color: #78350f; }
+    .s55 .tag { background: #78350f; color: #fcd34d; }
+    .s55 .badge { background: #d97706; }
+
+    /* 5.6 Pink */
+    .s56 .section-header { background: linear-gradient(135deg, #831843, #db2777); }
+    .s56 .check-icon { background: #db2777; }
+    .s56 pre { border-color: #831843; }
+    .s56 .tag { background: #831843; color: #f9a8d4; }
+    .s56 .flow-box { background: #be185d; }
+    .s56 .badge { background: #db2777; }
+
+    /* Method pill colors */
+    .pill-get    { background: #1e3a5f; color: #60a5fa; }
+    .pill-post   { background: #064e3b; color: #6ee7b7; }
+    .pill-put    { background: #78350f; color: #fcd34d; }
+    .pill-patch  { background: #3b0764; color: #c4b5fd; }
+    .pill-delete { background: #7f1d1d; color: #fca5a5; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>API Learning Map</h1>
+    <p>Udemy Web Development Course — Section 5 Complete</p>
+    <div class="badge-row">
+      <span class="badge s52">5.2 JSON</span>
+      <span class="badge s53">5.3 Axios</span>
+      <span class="badge s54">5.4 Auth</span>
+      <span class="badge s55">5.5 REST</span>
+      <span class="badge s56">5.6 Project</span>
+    </div>
+  </div>
+
+  <!-- 5.2 JSON -->
+  <div class="section s52">
+    <div class="section-header">
+      <div class="section-icon">📦</div>
+      <div>
+        <div class="section-num">Section 5.2</div>
+        <div class="section-title">JSON — JavaScript Object Notation</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="section-desc">JSON is the universal language of APIs. Data is always sent and received as JSON strings — you convert them into usable JavaScript objects and back.</p>
+      <div class="two-col">
+        <div>
+          <div class="code-label">Parsing JSON (string → object)</div>
+          <pre>const json = '{"name":"Chicken Taco","price":2.99}'
+
+// Convert string to JS object
+const obj = JSON.parse(json)
+console.log(obj.name)  // "Chicken Taco"
+console.log(obj.price) // 2.99</pre>
+        </div>
+        <div>
+          <div class="code-label">Stringify + Search</div>
+          <pre>// Convert object back to string
+JSON.stringify(obj)
+// '{"name":"Chicken Taco",...}'
+
+// Search a JSON array
+const recipe = data.find(item =>
+  item.name.includes("Chicken")
+)</pre>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="check-item"><div class="check-icon s52">✓</div>JSON.parse() — converts a string into a usable JavaScript object</div>
+        <div class="check-item"><div class="check-icon s52">✓</div>JSON.stringify() — converts an object back into a string for display</div>
+        <div class="check-item"><div class="check-icon s52">✓</div>Searching arrays with .find() to get a specific item</div>
+        <div class="check-item"><div class="check-icon s52">✓</div>Passing JSON data to EJS templates for rendering</div>
+      </div>
+      <div class="tags">
+        <span class="tag s52">JSON.parse()</span>
+        <span class="tag s52">JSON.stringify()</span>
+        <span class="tag s52">.find()</span>
+        <span class="tag s52">EJS Templates</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.3 Axios -->
+  <div class="section s53">
+    <div class="section-header">
+      <div class="section-icon">🌐</div>
+      <div>
+        <div class="section-num">Section 5.3</div>
+        <div class="section-title">Axios — Making HTTP Requests</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="section-desc">Axios is a library that lets your server talk to external APIs. It handles sending requests and receiving responses using async/await.</p>
+      <div class="two-col">
+        <div>
+          <div class="code-label">Basic GET with async/await</div>
+          <pre>app.get("/", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://bored-api.appbrewery.com/random"
+    )
+    res.render("index.ejs", {
+      data: response.data
+    })
+  } catch (error) {
+    res.render("index.ejs", {
+      error: error.message
+    })
+  }
+})</pre>
+        </div>
+        <div>
+          <div class="code-label">With query parameters</div>
+          <pre>// params builds URL automatically:
+// /filter?type=social&participants=2
+axios.get(URL + "/filter", {
+  params: {
+    type: req.body.type,
+    participants: req.body.participants
+  }
+})
+
+// Pick a random item from results
+const items = response.data
+const random = items[
+  Math.floor(Math.random() * items.length)
+]</pre>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-box s53">Browser</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s53">Express Route</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s53">Axios</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s53">External API</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s53">EJS Render</div>
+      </div>
+      <div class="checklist">
+        <div class="check-item"><div class="check-icon s53">✓</div>async/await — cleaner way to handle promises instead of .then()</div>
+        <div class="check-item"><div class="check-icon s53">✓</div>try/catch — handles errors so the server doesn't crash</div>
+        <div class="check-item"><div class="check-icon s53">✓</div>params option — Axios builds query strings automatically</div>
+        <div class="check-item"><div class="check-icon s53">✓</div>Math.random() — pick a random item from an array of results</div>
+      </div>
+      <div class="tags">
+        <span class="tag s53">axios.get()</span>
+        <span class="tag s53">async/await</span>
+        <span class="tag s53">try/catch</span>
+        <span class="tag s53">params</span>
+        <span class="tag s53">response.data</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.4 AUTH -->
+  <div class="section s54">
+    <div class="section-header">
+      <div class="section-icon">🔐</div>
+      <div>
+        <div class="section-num">Section 5.4</div>
+        <div class="section-title">API Authentication — 4 Methods</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="section-desc">APIs use authentication to verify who is making a request. Each method sends credentials differently — in the URL, in a header, or encoded in the request.</p>
+      <div class="auth-grid">
+        <div class="auth-card auth-noauth">
+          <div class="auth-name">No Auth</div>
+          <div class="auth-desc">Public APIs — no credentials needed</div>
+          <pre>axios.get(API_URL + "random")</pre>
+        </div>
+        <div class="auth-card auth-basic">
+          <div class="auth-name">Basic Auth</div>
+          <div class="auth-desc">Username + password encoded in the header</div>
+          <pre>axios.get(URL, {
+  auth: {
+    username: yourUsername,
+    password: yourPassword,
+  }
+})</pre>
+        </div>
+        <div class="auth-card auth-apikey">
+          <div class="auth-name">API Key</div>
+          <div class="auth-desc">Unique key passed as a query param in the URL</div>
+          <pre>axios.get(URL, {
+  params: {
+    score: 5,
+    apiKey: yourAPIKey,
+  }
+})
+// → /filter?score=5&apiKey=...</pre>
+        </div>
+        <div class="auth-card auth-bearer">
+          <div class="auth-name">Bearer Token</div>
+          <div class="auth-desc">Token sent in the Authorization header</div>
+          <pre>axios.get(URL, {
+  headers: {
+    Authorization:
+      `Bearer ${yourBearerToken}`
+  }
+})</pre>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="check-item"><div class="check-icon s54">✓</div>No Auth — public endpoints, plain axios.get() with no options</div>
+        <div class="check-item"><div class="check-icon s54">✓</div>Basic Auth — auth: { username, password } option in Axios</div>
+        <div class="check-item"><div class="check-icon s54">✓</div>API Key — passed as params in the URL query string</div>
+        <div class="check-item"><div class="check-icon s54">✓</div>Bearer Token — passed in headers as Authorization: Bearer ...</div>
+      </div>
+      <div class="tags">
+        <span class="tag s54">No Auth</span>
+        <span class="tag s54">Basic Auth</span>
+        <span class="tag s54">API Key</span>
+        <span class="tag s54">Bearer Token</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.5 REST -->
+  <div class="section s55">
+    <div class="section-header">
+      <div class="section-icon">⚡</div>
+      <div>
+        <div class="section-num">Section 5.5</div>
+        <div class="section-title">REST APIs — CRUD Operations</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="section-desc">REST APIs use 5 HTTP methods to cover every possible data operation. Together they form CRUD — Create, Read, Update, Delete — the backbone of every web app.</p>
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Action</th>
+            <th>Axios Call</th>
+            <th>URL Pattern</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="method-pill pill-get">GET</span></td>
+            <td>Read data</td>
+            <td><code>axios.get(url, config)</code></td>
+            <td><code>/secrets/42</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-pill pill-post">POST</span></td>
+            <td>Create new</td>
+            <td><code>axios.post(url, body, config)</code></td>
+            <td><code>/secrets</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-pill pill-put">PUT</span></td>
+            <td>Replace all fields</td>
+            <td><code>axios.put(url, body, config)</code></td>
+            <td><code>/secrets/42</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-pill pill-patch">PATCH</span></td>
+            <td>Update some fields</td>
+            <td><code>axios.patch(url, body, config)</code></td>
+            <td><code>/secrets/42</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-pill pill-delete">DELETE</span></td>
+            <td>Remove data</td>
+            <td><code>axios.delete(url, config)</code></td>
+            <td><code>/secrets/42</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="code-label">Reusable config — define once, use in every request</div>
+      <pre>// Define once at the top
+const config = { headers: { Authorization: `Bearer ${yourBearerToken}` } }
+
+// Reuse everywhere — no repetition
+const result = await axios.get(API_URL + "/secrets/" + id, config)
+const result = await axios.put(API_URL + "/secrets/" + id, req.body, config)
+const result = await axios.delete(API_URL + "/secrets/" + id, config)</pre>
+      <div class="checklist" style="margin-top:14px">
+        <div class="check-item"><div class="check-icon s55">✓</div>PUT replaces the entire record — all fields must be sent</div>
+        <div class="check-item"><div class="check-icon s55">✓</div>PATCH updates only the fields you send — others stay unchanged</div>
+        <div class="check-item"><div class="check-icon s55">✓</div>DELETE takes no body — just the ID in the URL</div>
+        <div class="check-item"><div class="check-icon s55">✓</div>config object stores auth and is reused across all requests</div>
+      </div>
+      <div class="tags">
+        <span class="tag s55">GET</span>
+        <span class="tag s55">POST</span>
+        <span class="tag s55">PUT</span>
+        <span class="tag s55">PATCH</span>
+        <span class="tag s55">DELETE</span>
+        <span class="tag s55">config</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.6 PROJECT -->
+  <div class="section s56">
+    <div class="section-header">
+      <div class="section-icon">🚀</div>
+      <div>
+        <div class="section-num">Section 5.6</div>
+        <div class="section-title">Secrets Project — Built from Scratch</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="section-desc">A complete web app built with no scaffolding — combining everything from this section into a working project that fetches real data from a live API.</p>
+      <div class="two-col">
+        <div>
+          <div class="code-label">Complete route — fetch & render</div>
+          <pre>app.get("/", async (req, res) => {
+  try {
+    const result = await axios.get(
+      API_URL + "/random"
+    )
+    res.render("index.ejs", {
+      secret: result.data.secret,
+      user:   result.data.username
+    })
+  } catch (error) {
+    res.render("index.ejs", {
+      error: error.message
+    })
+  }
+})</pre>
+        </div>
+        <div>
+          <div class="code-label">Key lessons learned</div>
+          <div class="checklist" style="margin-top:0">
+            <div class="check-item"><div class="check-icon s56">✓</div>req always before res — "request in, response out"</div>
+            <div class="check-item"><div class="check-icon s56">✓</div>Variable names must exactly match what the EJS template uses</div>
+            <div class="check-item"><div class="check-icon s56">✓</div>res.render must be inside try{} to access the result variable</div>
+            <div class="check-item"><div class="check-icon s56">✓</div>ReferenceError = variable name doesn't match template</div>
+            <div class="check-item"><div class="check-icon s56">✓</div>express.static("public") serves CSS and images</div>
+          </div>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-box s56">localhost:3000</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s56">Express Route</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s56">axios.get()</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s56">secrets-api</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s56">res.render()</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box s56">index.ejs</div>
+      </div>
+      <div class="tags">
+        <span class="tag s56">Express</span>
+        <span class="tag s56">Axios</span>
+        <span class="tag s56">EJS</span>
+        <span class="tag s56">async/await</span>
+        <span class="tag s56">try/catch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL -->
+  <div class="final">
+    <h2>Section 5 Complete</h2>
+    <p>You went from understanding what JSON is to building a full project that talks to real APIs.</p>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <div class="s-icon">🟢</div>
+        <div class="s-name">Node.js</div>
+        <div class="s-desc">Runtime environment</div>
+      </div>
+      <div class="stack-item">
+        <div class="s-icon">⚙️</div>
+        <div class="s-name">Express</div>
+        <div class="s-desc">Web server & routing</div>
+      </div>
+      <div class="stack-item">
+        <div class="s-icon">🌐</div>
+        <div class="s-name">Axios</div>
+        <div class="s-desc">HTTP requests</div>
+      </div>
+      <div class="stack-item">
+        <div class="s-icon">🎨</div>
+        <div class="s-name">EJS</div>
+        <div class="s-desc">HTML templating</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

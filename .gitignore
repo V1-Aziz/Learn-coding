@@ -1,0 +1,29 @@
+# Flutter/Dart build output — keep only lib/, pubspec, etc.
+**/android/
+**/ios/
+**/linux/
+**/macos/
+**/windows/
+**/web/
+**/build/
+**/.dart_tool/
+*.g.dart
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+
+# Web / Node
+node_modules/
+dist/
+
+# Archives & binaries
+*.zip
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

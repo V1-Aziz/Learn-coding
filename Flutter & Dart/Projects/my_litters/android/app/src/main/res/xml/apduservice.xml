@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declares the AID this app's Host Card Emulation service responds to.
+     The AID (F04D594C5452 = "MYLTR") MUST match the SELECT APDU the
+     staff-side reader sends in NfcReader. Category "other" (not "payment")
+     because this is a closed-loop fuel card, not an EMV payment card. -->
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/hce_service_desc"
+    android:requireDeviceUnlock="false">
+    <aid-group
+        android:category="other"
+        android:description="@string/hce_aid_group_desc">
+        <aid-filter android:name="F04D594C5452" />
+    </aid-group>
+</host-apdu-service>

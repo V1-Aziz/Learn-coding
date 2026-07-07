@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Empty state — centered in the middle of the page */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    gap: 16px;
+}
+
+.empty-state p {
+    color: #888888;
+    font-size: 1.1rem;
+}
+
+/* Header when posts exist — top center */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+/* Posts grid — vertical cards in a row */
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Post card — vertical */
+.post-card {
+    background-color: #1c1c1c;
+    border-top: 4px solid #00c896;
+    border-radius: 8px;
+    padding: 24px 20px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-card h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.post-card p {
+    color: #888888;
+    line-height: 1.6;
+    flex: 1;
+    text-align: center;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Links */
+a {
+    color: #00c896;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #00a87e;
+}
+
+/* Buttons */
+button {
+    background-color: #00c896;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #00a87e;
+}
+
+button.delete-btn {
+    background-color: transparent;
+    color: #e05555;
+    border: 1px solid #e05555;
+    padding: 6px 14px;
+}
+
+button.delete-btn:hover {
+    background-color: #e05555;
+    color: #fff;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input[type="text"],
+textarea {
+    background-color: #1c1c1c;
+    border: 1px solid #2e2e2e;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #00c896;
+}
+
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 16px;
+}
