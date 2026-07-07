@@ -1,0 +1,22 @@
+# Memory Index
+
+- [Course General Teaching Style](course_general.md) — How to teach, hint system (4 levels), ask to-do list or step-by-step before every task
+- [Day 18 - Turtle and GUI](course_days/day18.md) — Turtle graphics and GUI basics, completed
+- [Day 19 - Turtle Event Listeners](course_days/day19.md) — Event listeners with turtle (keyboard/mouse), in progress
+- [Day 20 - Snake Game Part 1](course_days/day20.md) — Snake Game with Turtle: screen setup, segments, basic movement loop, in progress
+- [Day 21 - Class Inheritance & Snake Game Part 2](course_days/day21.md) — Inheritance + completed Snake Game (score, wall/tail collisions, growth)
+- [Day 22 - Pong Game](course_days/day22.md) — Completed Pong: paddles via constructor params, ball physics, scoreboard, progressive speed
+- [Day 23 - Turtle Crossing](course_days/day23.md) — Completed: Player(Turtle), CarManager (NOT inherited), random spawning, level scoreboard
+- [Day 24 - File Manipulation](course_days/day24.md) — Persist Snake high score to data.txt; file modes (w truncates), int() on read, with-block placement
+- [Day 25 - CSV and pandas](course_days/day25.md) — readlines()+strip(), csv.reader(), pandas.read_csv(), value_counts(), to_csv(), completed
+- [Day 26 - Comprehensions and pandas iteration](course_days/day26.md) — List/dict comprehensions, Celsius→Fahrenheit, word lengths, pandas iterrows(), completed
+- [Day 27 - Tkinter and args/kwargs](course_days/day27.md) — Tkinter GUI programming, *args, **kwargs — completed
+- [Day 28 - Pomodoro Timer](course_days/day28.md) — Pomodoro GUI: window.after() countdown, work/break cycles, checkmarks, reset
+- [Day 29 - Password Manager GUI](course_days/day29.md) — Tkinter grid layout, password generator (list comprehensions + shuffle), save to data.txt (append), validation + askokcancel, pyperclip
+- [Day 30 - Password Manager JSON + Search](course_days/day30.md) — Switched to JSON storage, find_password() search with try/except, nested dict access, FileNotFoundError + JSONDecodeError handling
+- [Day 31 - Flashy Flash Card App](course_days/day31.md) — French→English flashcards: Canvas create_image/create_text with saved IDs + itemconfig, window.after/after_cancel timed flip, pandas to_dict/to_csv(index=False), try/except progress persistence, completed
+- [Learning GitHub Repo](learning_github_repo.md) — V1-Aziz/Learn-coding repo; syncs Udemy work across Windows PC + macOS; git root at Udemy folder; push only when asked
+- [Feedback - Clear quiz questions](feedback_clear_questions.md) — Ask one clear question at a time; don't mix two prompts (e.g. "what does it print" + "what's missing")
+- [Feedback - Step structure first, then review](feedback_step_then_review.md) — Give step instructions first; never review code mid-step even if user jumped ahead
+- [Feedback - Read code file first](feedback_read_code_first.md) — Always read the file from disk; never ask the user to paste their code
+- [Feedback - Read main.py before saving](feedback_read_before_save.md) — Always read main.py before saving the day's memory entry
