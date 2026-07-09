@@ -36,6 +36,5 @@ Added persistent high-score storage to the Day 21 Snake game's `scoreboard.py`:
 Located in `Day 24/Mail merging/`. Reads `Input/Names/invited_names.txt` (`readlines()`) and `Input/Letters/starting_letter.txt` (`read()`), then per name replaces `[name]` placeholder and writes a personalized letter to `Output/ReadyToSend/invite_for_{name}.txt`.
 
 Key bug debugged: `readlines()` keeps the trailing `\n` on each name. Since the template is `Dear [name],`, the unstripped name made the comma fall to its own line, AND the output filenames had a literal newline (`invite_for_Aang\n.txt`). Fix: strip once at top of loop into a variable, reuse it for both the letter body and the filename. Lesson reinforced: prefer plain `.strip()` over `.strip("\n")`, and strip once rather than per-use.
-123123
 
 See [[day21-class-inheritance-snake-game-part-2]] for the base Snake game.

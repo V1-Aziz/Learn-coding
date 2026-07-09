@@ -15,6 +15,7 @@
 - [Day 29 - Password Manager GUI](course_days/day29.md) — Tkinter grid layout, password generator (list comprehensions + shuffle), save to data.txt (append), validation + askokcancel, pyperclip
 - [Day 30 - Password Manager JSON + Search](course_days/day30.md) — Switched to JSON storage, find_password() search with try/except, nested dict access, FileNotFoundError + JSONDecodeError handling
 - [Day 31 - Flashy Flash Card App](course_days/day31.md) — French→English flashcards: Canvas create_image/create_text with saved IDs + itemconfig, window.after/after_cancel timed flip, pandas to_dict/to_csv(index=False), try/except progress persistence, completed
+- [Day 32 - SMTP Email & datetime](course_days/day32.md) — smtplib (Gmail App Password, Subject:\n\n), datetime.weekday(); Birthday Wisher: (month,day) tuple dict key, row.name pandas trap, `in`-before-`[]`, dynamic recipient, env-var credentials, completed
 - [Learning GitHub Repo](learning_github_repo.md) — V1-Aziz/Learn-coding repo; syncs Udemy work across Windows PC + macOS; git root at Udemy folder; push only when asked
 - [Feedback - Clear quiz questions](feedback_clear_questions.md) — Ask one clear question at a time; don't mix two prompts (e.g. "what does it print" + "what's missing")
 - [Feedback - Step structure first, then review](feedback_step_then_review.md) — Give step instructions first; never review code mid-step even if user jumped ahead
