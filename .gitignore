@@ -23,7 +23,19 @@ dist/
 # Archives & binaries
 *.zip
 
+# Personal exercise scratch folder (not part of the course repo)
+Exercise/
+
 # Editor / OS
 .vscode/
 .idea/
 .DS_Store
+
+#Claude folders
+.claude
+
+#CSV
+.csv
+
+# Back Log Extractor generated output
+python/Projects/Back Log Extractor/*.csv
